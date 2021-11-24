@@ -12,7 +12,17 @@ pool:
 steps:
 - script: echo Starting Build!
   displayName: 'Go! Run a one-line script'
-
+  
+task: PublishPipelineArtifact@1
+  inputs:
+    pathToPublish: '$(System.DefaultWorkingDirectory)/ci1.txt'
+    artifactName: 'text file'
+    
+task: PublishPipelineArtifact@1
+  inputs:
+    pathToPublish: '$(System.DefaultWorkingDirectory)/ci2.txt'
+    artifactName: 'second text file'
+    
 - script: |
     echo Build Finished!
   displayName: 'Done! Run a one-line script'
