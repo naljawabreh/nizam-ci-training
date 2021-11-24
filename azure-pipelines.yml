@@ -10,17 +10,28 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Starting Build!
-  displayName: 'Go! Run a one-line script'
+- script: echo "Build is starting"
+  displayName: 'Start build'
   
-- task: PublishPipelineArtifact@1
-  inputs:
-    pathToPublish: '$(System.DefaultWorkingDirectory)/ci1.txt'
-    
-- task: PublishPipelineArtifact@1
-  inputs:
-    pathToPublish: '$(System.DefaultWorkingDirectory)/ci2.txt'
-    
+
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+  
 - script: |
-    echo Build Finished!
-  displayName: 'Done! Run a one-line script'
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+  
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: '$(System.DefaultWorkingDirectory)/ci1.txt'
+    artifactName: ci1
+ 
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: '$(System.DefaultWorkingDirectory)/ci2.txt'
+    artifactName: ci2
+  
+
+- script: echo "Build is finished"
+  displayName: 'Finish build'
