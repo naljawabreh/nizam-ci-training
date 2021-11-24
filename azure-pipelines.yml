@@ -16,12 +16,10 @@ steps:
 - task: PublishPipelineArtifact@1
   inputs:
     pathToPublish: '$(System.DefaultWorkingDirectory)/ci1.txt'
-    artifactName: 'text_file'
     
 - task: PublishPipelineArtifact@1
   inputs:
     pathToPublish: '$(System.DefaultWorkingDirectory)/ci2.txt'
-    artifactName: 'second_text_file'
     
 - script: |
     echo Build Finished!
