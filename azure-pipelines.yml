@@ -6,6 +6,11 @@
 trigger:
 - deployToDev9
 
+variables:
+- group: nizam-var-grp
+- name: myName
+  value: 'Nizam Aljawabreh'
+  
 pool:
   vmImage: ubuntu-latest
 
