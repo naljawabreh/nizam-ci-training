@@ -1,2 +1,0 @@
-ABCDEF
-Line two to be printed on Azure
